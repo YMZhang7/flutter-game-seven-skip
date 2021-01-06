@@ -12,7 +12,7 @@ class GameInitialScreen extends StatelessWidget {
         children: [
           AnimatedTitle(intervalStart: 0.0, intervalEnd: 0.5,),
           SizedBox(height: 150.0,),
-          AnimatedStartButton(intervalStart: 0.6, intervalEnd: 1.0, score: score,),
+          AnimatedStartButton(intervalStart: 0.6, intervalEnd: 1.0,),
         ],
       ),
     );

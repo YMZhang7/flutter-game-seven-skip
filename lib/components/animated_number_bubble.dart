@@ -37,11 +37,12 @@ class AnimatedNumberBubbleState extends State<AnimatedNumberBubble> with TickerP
       if(status == AnimationStatus.completed) {
         print('completed');
         if (widget.number % 7 != 0){
-          // BlocProvider.of<ScreensBloc>(context).add(EndGameFail());
+          BlocProvider.of<ScreensBloc>(context).add(EndGameFail(score: widget.score));
           print('failed');
         } else {
           print('Well done');
-          // widget.calculateScore(3);
+          controller.reset();
+          controller.forward();
           BlocProvider.of<ScreensBloc>(context).add(StartGame(number: widget.number + 1, score: widget.score));
         }
       }

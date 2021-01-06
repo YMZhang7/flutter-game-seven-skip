@@ -6,8 +6,7 @@ import 'package:seven_skip/bloc/screens_bloc.dart';
 class AnimatedStartButton extends StatefulWidget {
   final double intervalStart;
   final double intervalEnd;
-  final int score;
-  const AnimatedStartButton({this.intervalStart, this.intervalEnd, @required this.score});
+  const AnimatedStartButton({this.intervalStart, this.intervalEnd});
   @override
   _AnimatedStartButtonState createState() => _AnimatedStartButtonState();
 }
@@ -49,7 +48,7 @@ class _AnimatedStartButtonState extends State<AnimatedStartButton> with TickerPr
     return FadeTransition(
       opacity: _opacityAnimation,
       child: RaisedButton(
-        onPressed: () => BlocProvider.of<ScreensBloc>(context).add(LoadGame(score: widget.score)),
+        onPressed: () => BlocProvider.of<ScreensBloc>(context).add(LoadGame(score: 0)),
         color: Color.fromRGBO(248, 131, 131, 1.0),
         child: Container(
           width: 100.0,
